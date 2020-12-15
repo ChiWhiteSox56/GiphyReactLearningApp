@@ -1,0 +1,13 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css");
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.gifs {
+  margin-top: 24px;
+}
+
+.textFieldSearch {
+  margin-right: 24px;
+}
