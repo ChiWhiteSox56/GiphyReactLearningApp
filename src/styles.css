@@ -11,3 +11,12 @@
 .textFieldSearch {
   margin-right: 24px;
 }
+
+.card {
+  width: 24rem;
+  padding: 12px;
+}
+
+.container {
+  display: grid | inline-grid;
+}
