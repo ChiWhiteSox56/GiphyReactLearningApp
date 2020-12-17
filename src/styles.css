@@ -13,10 +13,22 @@
 }
 
 .card {
-  width: 24rem;
+  margin: 12px;
   padding: 12px;
 }
 
-.container {
-  display: grid | inline-grid;
+.button {
+  color: #0277bd;
+}
+
+.grid {
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.grid > div {
+  flex-basis: calc(30% - 40px);
 }

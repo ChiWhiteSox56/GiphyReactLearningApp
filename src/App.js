@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./styles.css";
-import { Button, Card, Container } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 
 class App extends Component {
   constructor(props) {
@@ -52,6 +52,27 @@ class App extends Component {
   render() {
     const { images } = this.state;
 
+    const renderCard = (gif, index) => {
+      return (
+        <Card border="info" key={index} className="card">
+          <Card.Img
+            variant="top"
+            key={index}
+            src={gif.images.original.url}
+            alt={gif.title}
+          />
+          <Card.Body>
+            <Card.Title>{gif.title}</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+            <Button variant="primary">Copy URL</Button>
+          </Card.Body>
+        </Card>
+      );
+    };
+
     return (
       <Fragment>
         <div className="App">
@@ -63,27 +84,7 @@ class App extends Component {
           </form>
         </div>
 
-        <div className="gifs">
-          {images.map((gif) => (
-            <Container className="container">
-              <Card border="info" className="card">
-                <Card.Img
-                  variant="top"
-                  src={gif.images.original.url}
-                  alt={gif.title}
-                />
-                <Card.Body>
-                  <Card.Title>{gif.title}</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Copy URL</Button>
-                </Card.Body>
-              </Card>
-            </Container>
-          ))}
-        </div>
+        <div className="grid">{images.map(renderCard)}</div>
       </Fragment>
     );
   }
